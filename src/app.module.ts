@@ -14,6 +14,6 @@ dotenv.config();
       MongooseModule.forRoot(process.env.DB_URL),
    ],
    controllers: [AppController],
-   providers: [AppService],
+   providers: [AppService]
 })
 export class AppModule {}
