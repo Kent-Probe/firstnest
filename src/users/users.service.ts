@@ -99,4 +99,25 @@ export class UsersService {
       const user = await this.userModel.findOne({ email: email });
       return user;
    }
+
+   async uploadFile(userId: number, imagePath: string): Promise<any> {
+      let updateUserDto: UpdateUserDto = new UpdateUserDto()
+      updateUserDto = {
+         ...updateUserDto,
+          avatar: imagePath
+      }
+      console.log(imagePath)
+      console.log(updateUserDto)
+      const user = await this.userModel.findOneAndUpdate({id: userId}, updateUserDto, {new: true})
+      console.log(user)
+      if(!user){
+         throw new HttpException('User not found', HttpStatus.NOT_FOUND);
+      }
+      return {
+         status: 'success',
+         code: HttpStatus.OK,
+         message: 'user updated file successfully',
+      };
+
+   }
 }

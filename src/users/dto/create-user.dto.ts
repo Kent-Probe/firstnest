@@ -1,16 +1,16 @@
 import {
    IsEmail,
    IsNotEmpty,
-   IsNumber,
    IsString,
    Matches,
    Validate,
 } from 'class-validator';
+import { PartialType } from '@nestjs/mapped-types';
 import { UniqueEmailValidator } from '../validations/unique-email.validator';
+import { UpdateUserDto } from './update-user.dto';
 
-export class CreateUserDto {
+export class CreateUserDto extends PartialType(UpdateUserDto) {
    @IsNotEmpty()
-   @IsNumber()
    readonly id: string;
    @IsNotEmpty()
    @IsString()
