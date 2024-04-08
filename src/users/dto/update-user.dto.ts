@@ -1,4 +1,4 @@
-import { IsEmail, IsOptional, IsString, Matches, Validate } from 'class-validator';
+import { IsEmail, IsOptional, IsString, Matches } from 'class-validator';
 
 export class UpdateUserDto {
    readonly id: string;

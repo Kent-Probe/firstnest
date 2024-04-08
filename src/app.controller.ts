@@ -10,6 +10,11 @@ export class AppController {
       return this.appService.getHello(name);
    }
 
+   @Get('/')
+   getHelloWorld(): string {
+      return this.appService.getHello(null);
+   }
+
    @Post('/bye')
    sayGoodbay(): string {
       return this.appService.sayGoodbay();

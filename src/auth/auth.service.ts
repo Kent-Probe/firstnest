@@ -17,18 +17,18 @@ export class AuthService {
                rol: user.rol,
                avatar: user.avatar,
                name: user.name,
-               lastname: user.lastname
+               lastname: user.lastname,
             },
             process.env.JWT_SECRET,
             {
-               expiresIn: 3600
-            }
-         )
+               expiresIn: 3600,
+            },
+         );
          return {
             status: 'success',
             code: 200,
             message: 'login successful',
-            token: token
+            token: token,
          };
       }
       throw new HttpException(

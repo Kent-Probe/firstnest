@@ -100,7 +100,7 @@ export class UsersService {
       return user;
    }
 
-   async uploadFile(userId: number, imagePath: string): Promise<any> {
+   /* async uploadFile(userId: number, imagePath: string): Promise<any> {
       let updateUserDto: UpdateUserDto = new UpdateUserDto()
       updateUserDto = {
          ...updateUserDto,
@@ -119,5 +119,5 @@ export class UsersService {
          message: 'user updated file successfully',
       };
 
-   }
+   } */
 }
